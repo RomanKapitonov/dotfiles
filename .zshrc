@@ -56,8 +56,6 @@ plugins=(git git-flow rails ruby github gem brew bundler osx history wakeonlan r
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export PATH="/Users/rkapitonov/.rvm/gems/ruby-1.9.3-p547@payindex-frontend/bin:/Users/rkapitonov/.rvm/gems/ruby-1.9.3-p547@global/bin:/Users/rkapitonov/.rvm/rubies/ruby-1.9.3-p547/bin:/Users/rkapitonov/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -76,17 +74,13 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 export EDITOR=subl
 export GIT_EDITOR=vim
-export PATH="/usr/local/sbin:$PATH"
-
 source /usr/local/share/zsh/site-functions/_aws
 
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-export PATH=$PATH:/Users/rkapitonov/PredictionIO/bin
-
 alias scheme="rlwrap -r -c -f ~/.scheme/bindings scheme"
+source ~/.profile
+
+# export NVM_DIR=~"$HOME/.nvm"
+export NVM_DIR=~"$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
