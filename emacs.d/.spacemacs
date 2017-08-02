@@ -31,7 +31,9 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     (haskell :variables haskell-process-type 'stack-ghci)
+     (haskell :variables
+              ;; haskell-process-type 'stack-ghci
+              haskell-completion-backend 'company-ghci)
      yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -56,9 +58,7 @@ values."
      ;; ruby-on-rails
      emacs-lisp
      markdown
-     (
-      auto-completion (haskell :variables haskell-completion-backend 'company-ghci)
-      )
+     auto-completion
      ;; syntax-checking
      (spell-checking :variables spell-checking-enable-by-default nil)
      ;; Custom layers
@@ -104,7 +104,7 @@ values."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update nil
+   dotspacemacs-check-for-update t
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
@@ -354,10 +354,6 @@ you should place your code here."
                 (neotree-find file-name)))
         (message "Could not find git project root."))))
   (global-set-key [f8] 'neotree-project-dir)
-  (let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
-    (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
-    (add-to-list 'exec-path my-cabal-path))
-  (require 'company)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
