@@ -32,7 +32,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      (haskell :variables
-              ;; haskell-process-type 'stack-ghci
+              haskell-process-type 'stack-ghci
               haskell-completion-backend 'company-ghci)
      yaml
      ;; ----------------------------------------------------------------
@@ -43,13 +43,14 @@ values."
      helm
      sql
      osx
+     org
      javascript
      (version-control :variables
                       version-control-diff-side 'left)
      git
      github
-     org
-     (shell :variables shell-default-shell 'eshell)
+     (shell :variables shell-default-shell 'multi-term
+                       shell-default-term-shell "/Users/rkapitonov/zsh")
      html
      (ruby :variables
            ruby-enable-enh-ruby-mode t
@@ -58,7 +59,8 @@ values."
      ;; ruby-on-rails
      emacs-lisp
      markdown
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-complete-with-key-sequence "jk")
      ;; syntax-checking
      (spell-checking :variables spell-checking-enable-by-default nil)
      ;; Custom layers
@@ -341,6 +343,8 @@ you should place your code here."
   (setq projectile-enable-caching t)
   (setq neo-smart-open t)
   (setq eshell-cmpl-cycle-completions nil)
+  (setq multi-term-program "/Users/rkapitonov/zsh")
+
   (defun neotree-project-dir ()
     "Open NeoTree using the git root."
     (interactive)
@@ -365,7 +369,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode web-completion-data auto-complete ghci-completion company-quickhelp pos-tip xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help ranger org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot focus-autosave-mode define-word yaml-mode ws-butler winum which-key web-mode volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit sql-indent spaceline smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters pug-mode projectile-rails popwin persp-mode pbcopy paradox osx-trash osx-dictionary orgit org-bullets open-junk-file neotree move-text mmm-mode minitest markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative link-hint less-css-mode launchctl intero info+ indent-guide hungry-delete hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy flyspell-correct-helm flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu enh-ruby-mode emmet-mode elisp-slime-nav dumb-jump diff-hl company-web company-statistics company-ghci company-ghc company-cabal column-enforce-mode cmm-mode clean-aindent-mode chruby bundler auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (org-projectile-helm org-category-capture ox-gfm web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode web-completion-data auto-complete ghci-completion company-quickhelp pos-tip xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help ranger org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot focus-autosave-mode define-word yaml-mode ws-butler winum which-key web-mode volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit sql-indent spaceline smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters pug-mode projectile-rails popwin persp-mode pbcopy paradox osx-trash osx-dictionary orgit org-bullets open-junk-file neotree move-text mmm-mode minitest markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative link-hint less-css-mode launchctl intero info+ indent-guide hungry-delete hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy flyspell-correct-helm flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu enh-ruby-mode emmet-mode elisp-slime-nav dumb-jump diff-hl company-web company-statistics company-ghci company-ghc company-cabal column-enforce-mode cmm-mode clean-aindent-mode chruby bundler auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

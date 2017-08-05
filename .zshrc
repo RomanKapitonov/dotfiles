@@ -2,7 +2,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export EDITOR='vim'
+export EDITOR='subl'
+export GIT_EDITOR='vim'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -74,8 +75,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export EDITOR=subl
-export GIT_EDITOR=vim
 source /usr/local/share/zsh/site-functions/_aws
 
 alias scheme="rlwrap -r -c -f ~/.scheme/bindings scheme"
