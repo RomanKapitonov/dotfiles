@@ -33,7 +33,8 @@ values."
    '(
      (haskell :variables
               haskell-process-type 'stack-ghci
-              haskell-completion-backend 'company-ghci)
+              haskell-completion-backend 'intero
+              haskell-enable-hindent-style "chris-done")
      yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.

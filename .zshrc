@@ -83,3 +83,4 @@ source ~/.profile
 # export NVM_DIR=~"$HOME/.nvm"
 export NVM_DIR=~"$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
+eval $(docker-machine env default)
